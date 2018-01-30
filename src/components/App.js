@@ -5,7 +5,7 @@ import Main from './Main';
 
 export default () => {
     return (
-        <div className='App' style={{ maxWidth: '920px', margin: 'auto' }}>
+        <div className='App container'>
             <Header />
             <Main />
         </div>

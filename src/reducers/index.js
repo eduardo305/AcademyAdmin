@@ -1,11 +1,8 @@
-// Just a simple CombineReducer. It can be updated with
-// your own reducers
-
 import { combineReducers } from 'redux';
-import SourceReducer from './SourceReducer';
+import { reducer as reduxForm } from 'redux-form';
 
 const rootReducer = combineReducers({
-  source: SourceReducer
+  form: reduxForm
 });
 
 export default rootReducer;
