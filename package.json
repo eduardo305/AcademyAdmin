@@ -11,7 +11,9 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "build-url": "^1.0.10",
+    "classnames": "^2.2.5",
     "css-loader": "^0.28.7",
+    "moment": "^2.20.1",
     "path": "^0.12.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -39,7 +41,7 @@
     "url-loader": "^0.6.2"
   },
   "scripts": {
-    "build": "webpack -w",
+    "build": "webpack",
     "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch",
     "test": "mocha --require babel-register --require ignore-styles test/helpers/config.js test/**/*.spec.js src/**/*.js",
     "test:tdd": "mocha --require babel-register --require ignore-styles --watch test/helpers/config.js test/**/*.spec.js src/**/*.js"

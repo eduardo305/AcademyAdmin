@@ -3,29 +3,44 @@ import { connect } from 'react-redux';
 import { map } from 'lodash';
 
 import formFields from './ClassroomForm.config';
+import goalsFields from './GoalsForm.config';
+import NextButton from '../NextButton';
+import CancelButton from '../CancelButton';
 
 class ClassroomReviewForm extends Component {
   renderFormFieldReview() {
-    return formFields.map(({ name, label }) => {
+    const classroomFields = formFields.map(({ name, label }) => {
       return (
         <div key={ name }>
           <div>{ label }</div>
           <div>{ this.props.formValues[name] }</div>
         </div>
       );
-    })
+    });
+
+    const classroomGoals = goalsFields.map(({ name, label}) => {
+      return (
+        <div key={name}>
+          <div>{label}</div>
+          <div>{this.props.formValues[name]}</div>
+        </div>
+      );
+    });
+
+    return [ ...classroomFields, ...classroomGoals ];
   }
 
   render() {
-    const { onCancel } = this.props;
+    const { onBack } = this.props;
+    console.log(this.props.formValues);
 
     return (
-      <div className='ClassroomReviewForm'>
+      <div className='Form ClassroomReviewForm'>
 
         { this.renderFormFieldReview() }
         
-        <button onClick={ onCancel }>Back</button>
-        <button onClick={ () => console.log(this.props.formValues) }>Confirm</button>
+        <NextButton onClick={() => console.log(this.props.formValues)} />
+        <CancelButton onClick={ onBack } />
       </div>
     );
   }
